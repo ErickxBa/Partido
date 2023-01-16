@@ -1,0 +1,10 @@
+@startuml
+
+class Partido {}
+class Equipo{}
+class Jugador{}
+
+Partido --> "2" Equipo : Equipos
+Equipo --> "11" Jugador : Jugadores
+
+@enduml

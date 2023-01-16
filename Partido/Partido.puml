@@ -1,0 +1,43 @@
+@startuml
+
+class Partido {
+    - equipos : Equipo[]
+    - jugadorEnPosesión Jugador: null
+    - equipoEnPosesión Equipo: null
+    - rand Random(): rand
+    + iniciar()
+    + presentarMarcador()
+    + tirarAPortería(Equipo equipo, Jugador jugador):String
+    + pasarJugador(Equipo equipo, Jugador jugador): String
+    + cambiarEquipoEnPosesión()
+    + setJugadorEnPosesión(Equipo: equipo)
+    + elBalonesRobado(): boolean
+}
+class Equipo{
+    - nombre: String
+    - jugadores: Jugador[]
+    - goles: int
+    - pasesConsecutivos: int
+    + toString():String
+    + obtenerJugador(Posición):int
+    + getPasesConsecutivos()
+    + reiniciarPases()
+    + getGoles()
+    + anotarGol()
+}
+class Jugador{
+    - nombre: String
+    + Jugador(nombre):String
+    + toString()
+}
+
+class Estado
+class Suplente
+class Titular
+
+Partido --> " 2 "Equipo : Equipos
+Equipo --> " 11 "Jugador : Jugadores
+Jugador --> Estado
+Titular -u-|> Estado
+Suplente -u-|> Estado
+@enduml
